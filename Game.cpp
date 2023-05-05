@@ -62,6 +62,7 @@ void Game::playing(Board &board)
                         break;
                     case SDLK_n:
                         board.cleanTab();
+                        board.remakeTab();
                         this->getStart = false;
                         break;
                     case SDLK_r:
