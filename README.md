@@ -17,6 +17,9 @@ During gameplay, the following features are available:
 - Press the "n" key to start a new game.
 - Press the "r" key to view the winnerlist, where you can see the ranking sorted by playtime or score.
 
+##Demo
+(https://github.com/Hoanghung0603/2048/issues/3#issue-1697847967)
+
 ## Installation
 To install and run the 2048 game, follow these steps:
 
