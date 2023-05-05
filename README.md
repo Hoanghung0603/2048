@@ -3,7 +3,6 @@
 # 2048 Game using C++ and SDL2.0
 
 This is a project about the 2048 game using C++ and SDL2.0. It is a popular puzzle game which is suitable for any age.
-![(Demo)](https://github.com/Hoanghung0603/2048/issues/1)
 
 ## Game Rules
 
@@ -18,6 +17,10 @@ During gameplay, the following features are available:
 - Press the "r" key to view the winnerlist, where you can see the ranking sorted by playtime or score.
 
 ## Demo
+<video width="1920" height="1080" controls>
+  <source src="[[link_to_video_file.mp](https://github.com/Hoanghung0603/2048/issues/3#issue-1697847967)4](https://github.com/Hoanghung0603/2048/issues/3#issue-1697847967)" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 ![2048Game](https://github.com/Hoanghung0603/2048/issues/3#issue-1697847967)
 
 ![(Screenshot)](https://github.com/Hoanghung0603/2048/issues/1)
