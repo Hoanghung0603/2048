@@ -21,7 +21,7 @@ During gameplay, the following features are available:
 To install and run the 2048 game, follow these steps:
 
 1. Install a C++ compiler (such as Visual Studio Code or Codeblocks).
-   (Here is how to download Codeblocks: [click here](https://www.wikihow.com/Download,-Install,-and-Use-Code::Blocks#Downloading-Code::Blocks))
+   ([Here is how to download Codeblocks](https://www.wikihow.com/Download,-Install,-and-Use-Code::Blocks#Downloading-Code::Blocks))
 3. Install the SDL2.0 library by downloading it from the official SDL2.0 website or using a package manager. ([Here is how to do it](https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index.php))
 
 ### Cloning the Repository
