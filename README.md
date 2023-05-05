@@ -18,8 +18,9 @@ During gameplay, the following features are available:
 - Press the "r" key to view the winnerlist, where you can see the ranking sorted by playtime or score.
 
 ## Demo
-![](https://github.com/Hoanghung0603/2048/issues/3#issue-1697847967)
+![2048Game](https://github.com/Hoanghung0603/2048/issues/3#issue-1697847967)
 
+![(Screenshot)](https://github.com/Hoanghung0603/2048/issues/1)
 ## Installation
 To install and run the 2048 game, follow these steps:
 
