@@ -1,0 +1,53 @@
+# depslib dependency file v1.0
+1683172284 source:c:\users\hung\onedrive\máy tính\2048\game.cpp
+	"Game.h"
+	<iostream>
+
+1683167654 c:\users\hung\onedrive\máy tính\2048\game.h
+	<cstdlib>
+	<ctime>
+	"Draw.h"
+	"Board.h"
+	"RankTab.h"
+	"SDL.h"
+	"SDL_image.h"
+
+1683167654 c:\users\hung\onedrive\máy tính\2048\draw.h
+	<string>
+	<cstring>
+	<sstream>
+	<bitset>
+	"Setting.h"
+	"Board.h"
+	"SDL.h"
+	"SDL_image.h"
+
+1681835855 c:\users\hung\onedrive\máy tính\2048\setting.h
+
+1683132248 c:\users\hung\onedrive\máy tính\2048\board.h
+	"Draw.h"
+	"SDL.h"
+
+1683166172 c:\users\hung\onedrive\máy tính\2048\ranktab.h
+	<iostream>
+	<fstream>
+	<string>
+	"Board.h"
+
+1683167654 source:c:\users\hung\onedrive\máy tính\2048\main.cpp
+	<iostream>
+	"Game.h"
+	"Draw.h"
+
+1683166232 source:c:\users\hung\onedrive\máy tính\2048\ranktab.cpp
+	"RankTab.h"
+
+1683171599 source:c:\users\hung\onedrive\máy tính\2048\board.cpp
+	"Board.h"
+	<iostream>
+
+1683170386 source:c:\users\hung\onedrive\máy tính\2048\draw.cpp
+	"Draw.h"
+	"SDL.h"
+	"SDL_image.h"
+

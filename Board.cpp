@@ -264,7 +264,6 @@ void Board::tabtobacktab()
     score=backScore;
 }
 
-
 int** Board::getTab() const
 {
     return this->tab;

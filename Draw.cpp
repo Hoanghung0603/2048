@@ -14,7 +14,18 @@ void DrawLine(SDL_Surface* screen, int x, int y, int l, int dx, int dy, Uint32 c
 		DrawPixel(screen, x, y, color);
 		x += dx;
 		y += dy;
-		};
+    }
+}
+
+void DrawRectangle(SDL_Surface* screen, int x, int y, int l, int k, Uint32 outlineColor, Uint32 fillColor)
+{
+    int i;
+	DrawLine(screen, x, y, k, 0, 1, outlineColor);
+	DrawLine(screen, x + l - 1, y, k, 0, 1, outlineColor);
+	DrawLine(screen, x, y, l, 1, 0, outlineColor);
+	DrawLine(screen, x, y + k - 1, l, 1, 0, outlineColor);
+	for(i = y + 1; i < y + k - 1; i++)
+		DrawLine(screen, x + 1, i, l - 2, 1, 0, fillColor);
 }
 
 void DrawString(SDL_Surface* screen, int x, int y, const char* text, SDL_Surface* charset, bool check, bool bold)
@@ -76,19 +87,6 @@ void DrawPoint(SDL_Surface* screen, int x, int y, int width, const char* number,
         DrawString(screen, (x + width / 2) - length*4 - 8, y + width / 2 - 4, number, charset, check);
     else
         DrawString(screen, (x + width / 2) - length*4 - 12, y + width / 2 - 4, number, charset, check);
-
-
-}
-
-void DrawRectangle(SDL_Surface* screen, int x, int y, int l, int k, Uint32 outlineColor, Uint32 fillColor)
-{
-    int i;
-	DrawLine(screen, x, y, k, 0, 1, outlineColor);
-	DrawLine(screen, x + l - 1, y, k, 0, 1, outlineColor);
-	DrawLine(screen, x, y, l, 1, 0, outlineColor);
-	DrawLine(screen, x, y + k - 1, l, 1, 0, outlineColor);
-	for(i = y + 1; i < y + k - 1; i++)
-		DrawLine(screen, x + 1, i, l - 2, 1, 0, fillColor);
 }
 
 void DrawBoard(SDL_Surface* screen, int** tab, const int &size, Uint32 outlineColor, Uint32 fillColor, SDL_Surface* charset)
@@ -121,7 +119,7 @@ void DrawScore(SDL_Surface* screen, unsigned int score, SDL_Surface* charset)
     int X = BOARD_X;
 	int Y = BOARD_Y + BOARD_WIDTH + 100;
 	int width = 40;
-	char number[18];
+	char number[12];
 
 	std::stringstream ss;
     ss << "score: " << score;

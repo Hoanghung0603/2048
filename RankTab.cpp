@@ -12,7 +12,7 @@ void RankTab::sortByScore()
 
 void RankTab::sortByTime()
 {
-    playerScore temp;
+    playerResult temp;
     for(int i=0; i < amount-1; i++){
         for(int j = i + 1; j < amount; j++){
             if(tab[i].endTime > tab[j].endTime){
@@ -22,9 +22,9 @@ void RankTab::sortByTime()
     }
 }
 
-playerScore* RankTab::createRanking()
+playerResult* RankTab::createRanking()
 {
-    playerScore *ranktab = new playerScore[amount];
+    playerResult *ranktab = new playerResult[amount];
     int x=0;
     for(int i=0; i<this->fileSize; i++){
         if(winnerList[i].endSize==size){
@@ -44,7 +44,7 @@ void RankTab::saveToFile(int score, double time, int size)
     file.close();
 }
 
-playerScore* RankTab::openFile()
+playerResult* RankTab::openFile()
 {
     std::ifstream file("winnerList.txt");
     if(!file){
@@ -57,7 +57,7 @@ playerScore* RankTab::openFile()
         ++this->fileSize;
     }
 
-    playerScore *list = new playerScore[fileSize];
+    playerResult*list = new playerResult[fileSize];
 
     file.clear();  //xóa các flag lỗi
     file.seekg(0, std::ios::beg); //đưa con trỏ đọc đến đầu file
@@ -95,7 +95,7 @@ void RankTab::showRank(SDL_Event &event, const Board &board, bool &quit, SDL_Sur
         }
         if (fileSize == 0 || limit == 0) {
             sprintf(text, "Winner list is empty");
-            DrawString(screen, SCREEN_WIDTH / 2 - strlen(text) * 7, SCREEN_HEIGHT / 2 , text, charset, true);
+            DrawString(screen, SCREEN_WIDTH / 2 - strlen(text) * 8, SCREEN_HEIGHT / 2 -8 , text, charset, true);
         }
 
         for (int i = startShow, placeShow=0; placeShow < limit; i++) {

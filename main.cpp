@@ -25,7 +25,6 @@ int main(int argc, char **argv){
             game.update_n_display();
         }
 	}
-
 	board.cleanTab();
     game.clean();
     return 0;

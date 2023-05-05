@@ -6,7 +6,7 @@
 #include <string>
 
 #include "Board.h"
-struct playerScore{
+struct playerResult{
     int endScore;
     double endTime;
     int endSize;
@@ -30,16 +30,16 @@ class RankTab
 
 
     private:
-        playerScore *tab;
+        playerResult *tab;
         bool showRanking = false;
         int size;
         int amount=0;
         int fileSize=0; //file có bao nhiêu dòng
-        playerScore *winnerList;
+        playerResult *winnerList;
         void sortByScore();
         void sortByTime();
-        playerScore *createRanking();
-        playerScore *openFile();
+        playerResult *createRanking();
+        playerResult *openFile();
 
 };
 

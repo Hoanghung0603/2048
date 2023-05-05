@@ -17,24 +17,23 @@ void Game::Initall()
                                SDL_TEXTUREACCESS_STREAMING,
                                SCREEN_WIDTH, SCREEN_HEIGHT);
     charset = SDL_LoadBMP("./cs8x8.bmp");
-        if(charset == NULL) {
-            std::cout<<"SDL_LoadBMP error: "<< SDL_GetError() <<std::endl;
-            this->clean();
-        }
+    if(charset == NULL) {
+        std::cout<<"SDL_LoadBMP error: "<< SDL_GetError() <<std::endl;
+        this->clean();
+    }
     SDL_SetColorKey(charset, true, 0x000000);
     brown = SDL_MapRGB(charset->format, 116,102,59);
     lightyellow = SDL_MapRGB(charset->format, 0xFF, 0xFF, 0xF0);
 }
 
-
 void Game::playing(Board &board)
 {
-    this->t2 = SDL_GetTicks();
-    this->delta = (t2 - t1) * 0.001;
-    this->t1 = t2;
-    this->worldTime += delta;
+    t2 = SDL_GetTicks();
+    delta = (t2 - t1) * 0.001;
+    t1 = t2;
+    worldTime += delta;
 
-    SDL_FillRect(screen, NULL, brown); //tô cửa sổ màu brown
+    SDL_FillRect(screen, NULL, brown);
     DrawBoard(screen, board.getTab(), board.size, brown, lightyellow, charset);
     DrawScore(screen, board.getScore(), charset);
     DrawRectangle(screen, 4, 4, SCREEN_WIDTH - 8, 36, brown, lightyellow);
@@ -62,6 +61,7 @@ void Game::playing(Board &board)
                         break;
                     case SDLK_n:
                         board.cleanTab();
+                        board.remakeTab();
                         this->getStart = false;
                         break;
                     case SDLK_r:
@@ -83,9 +83,6 @@ void Game::playing(Board &board)
 
 void Game::choose_size(Board &board)
 {
-    if (board.size >= 6) board.size = 6;
-    if (board.size <= 3) board.size = 3;
-
     SDL_FillRect(screen, NULL, brown);
     DrawRectangle(screen, 4, 4, SCREEN_WIDTH - 8, 36, brown, lightyellow);
 
@@ -107,10 +104,12 @@ void Game::choose_size(Board &board)
                 if (event.key.keysym.sym == SDLK_ESCAPE) this->quit = true;
                 else if (event.key.keysym.sym == SDLK_UP){
                     board.size++;
+                    if (board.size>=6) board.size = 6;
                     board.remakeTab();
                 }
                 else if (event.key.keysym.sym == SDLK_DOWN){
                     board.size--;
+                    if(board.size<=3) board.size = 3;
                     board.remakeTab();
                 }
                 else if (event.key.keysym.sym == SDLK_RETURN) {
