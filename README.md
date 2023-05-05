@@ -17,7 +17,8 @@ During gameplay, the following features are available:
 - Press the "r" key to view the winnerlist, where you can see the ranking sorted by playtime or score.
 
 ## Demo
-<video src="https://github.com/Hoanghung0603/2048/issues/3#issue-1697847967" width="1920" height="1080" controls>
+<video width="1020" height="1080" controls>
+  <source src="https://github.com/Hoanghung0603/2048/issues/3.mov" type="video/mp4">
 </video>
 
 ![2048Game](https://github.com/Hoanghung0603/2048/issues/3#issue-1697847967)
