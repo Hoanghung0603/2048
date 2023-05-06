@@ -12,7 +12,7 @@
 	"SDL.h"
 	"SDL_image.h"
 
-1683167654 c:\users\hung\onedrive\máy tính\2048\draw.h
+1683300118 c:\users\hung\onedrive\máy tính\2048\draw.h
 	<string>
 	<cstring>
 	<sstream>
@@ -34,20 +34,25 @@
 	<string>
 	"Board.h"
 
-1683167654 source:c:\users\hung\onedrive\máy tính\2048\main.cpp
+1683366228 source:c:\users\hung\onedrive\máy tính\2048\main.cpp
 	<iostream>
 	"Game.h"
 	"Draw.h"
+	"Handle_Music.h"
 
 1683166232 source:c:\users\hung\onedrive\máy tính\2048\ranktab.cpp
 	"RankTab.h"
 
-1683171599 source:c:\users\hung\onedrive\máy tính\2048\board.cpp
+1683355242 source:c:\users\hung\onedrive\máy tính\2048\board.cpp
 	"Board.h"
 	<iostream>
 
-1683170386 source:c:\users\hung\onedrive\máy tính\2048\draw.cpp
+1683355407 source:c:\users\hung\onedrive\máy tính\2048\draw.cpp
 	"Draw.h"
 	"SDL.h"
 	"SDL_image.h"
+
+1683366106 c:\users\hung\onedrive\máy tính\2048\handle_music.h
+	"SDL.h"
+	"SDL_mixer.h"
 

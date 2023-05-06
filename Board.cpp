@@ -30,7 +30,6 @@ void Board::remakeTab()
     this->score = 0;
 }
 
-
 bool Board::checkWin()
 {
     for (int i = 0; i < size; i++) {
@@ -282,10 +281,9 @@ unsigned int Board::getScore() const
 void Board::cleanTab()
 {
     for (int i = 0; i < size; ++i){
-		delete[] this->tab[i];
-		delete[] this->backTab[i];
+	delete[] this->tab[i];
+	delete[] this->backTab[i];
     }
 	delete[] tab;
 	delete[] backTab;
 }
-

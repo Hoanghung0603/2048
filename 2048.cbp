@@ -40,6 +40,7 @@
 		<Unit filename="Draw.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
+		<Unit filename="Handle_Music.h" />
 		<Unit filename="RankTab.cpp" />
 		<Unit filename="RankTab.h" />
 		<Unit filename="Setting.h" />

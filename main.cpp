@@ -1,9 +1,11 @@
 #include <iostream>
 #include "Game.h"
 #include "Draw.h"
-
+#include "Handle_Music.h"
 
 int main(int argc, char **argv){
+    Handle_Music music;
+    music.play_soundtrack();
     Board board(4);
     Game game;
     game.Initall();
@@ -25,6 +27,7 @@ int main(int argc, char **argv){
             game.update_n_display();
         }
 	}
+    music.clean_music();
 	board.cleanTab();
     game.clean();
     return 0;
