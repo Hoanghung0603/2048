@@ -21,6 +21,7 @@ class Board
         bool canPut();
         bool checkToRandom();
         void randomOnBoard();
+        void change_winscore();
         void move(SDL_Event event);
         void tabtobacktab();
         void cleanTab();
@@ -33,6 +34,7 @@ class Board
     private:
         int** tab;
         int** backTab;
+        int winscore =2048;
         unsigned int score = 0;
         unsigned int backScore = score;
 
@@ -44,7 +46,6 @@ class Board
         void moveTop();
         void moveLeft();
         void moveRight();
-
 };
 
 #endif // BOARD_H

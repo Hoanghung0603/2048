@@ -119,6 +119,7 @@ void Game::choose_size(Board &board)
                     this->t1 = SDL_GetTicks();
                     this->worldTime = 0;
                 }
+                board.change_winscore();
                 break;
             case SDL_KEYUP:
                 break;

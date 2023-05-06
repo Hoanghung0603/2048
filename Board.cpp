@@ -34,7 +34,7 @@ bool Board::checkWin()
 {
     for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size; j++) {
-			if (tab[i][j] == 2048) return true;
+			if (tab[i][j] == winscore) return true;
 		}
 	}
 	return false;
@@ -87,6 +87,14 @@ void Board::randomOnBoard()
         this->tab[X][Y]=2;
 	}
 }
+
+void Board::change_winscore()
+{
+    if(size==3) this->winscore=1024;
+    else if(size==6) this->winscore=4096;
+    else winscore=2048;
+}
+
 
 void Board::moveBot()
 {
