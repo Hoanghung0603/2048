@@ -11,10 +11,10 @@ void DrawPixel(SDL_Surface* surface, int x, int y, Uint32 color)
 void DrawLine(SDL_Surface* screen, int x, int y, int l, int dx, int dy, Uint32 color)
 {
     for(int i = 0; i < l; i++) {
-		DrawPixel(screen, x, y, color);
-		x += dx;
-		y += dy;
-		};
+	DrawPixel(screen, x, y, color);
+	x += dx;
+	y += dy;
+	}
 }
 
 void DrawString(SDL_Surface* screen, int x, int y, const char* text, SDL_Surface* charset, bool check, bool bold)
