@@ -8,7 +8,7 @@ This is a project about the 2048 game using C++ and SDL2.0 (include SDL_image an
 
 ## Game Rules
 
-- When starting the game, the player can choose the size of the board they want to play (the smaller the board size, the harder the game is).
+- When starting the game, the player can choose the size of the board they want to play. Winning conditions vary based on the chosen grid size. For a 3x3 grid, the player needs to reach the 1024 tile. For a 4x4 or 5x5 grid, player wins by reaching the 2048 tile. To win on a 6x6 grid, the 4096 tile needs to be reached.
 - Game starts, player uses the arrow keys to move the number tiles. Two square tiles with the same value will merge into one.
 - You win the game if a tile with the value of 2048 appears. Otherwise, the game ends when you cannot move the tiles anymore.
 
