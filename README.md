@@ -20,7 +20,7 @@ During gameplay, the following features are available:
 
 ## Demo
 
-https://user-images.githubusercontent.com/125201219/236617435-5c62c1ad-24ba-4e8a-840b-d98817782606.mp4
+https://github.com/Hoanghung0603/2048/assets/125201219/2054154e-5748-4d0c-9a23-9bebf8c47bc3
 
 ## Installation
 To install and run the 2048 game, follow these steps:
