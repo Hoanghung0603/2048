@@ -10,6 +10,20 @@ void Game::Initall()
         this->clean();
         std::cout<<"SDL_CreateWindowAndRenderer error: "<<SDL_GetError()<<std::endl;
     }
+
+    if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+        std::cout<<"SDL initialization failed. SDL_Error: "<< SDL_GetError()<<std::endl;
+    }
+    if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG) {
+        std::cout<<"SDL_image initialization failed. SDL_image Error: "<< IMG_GetError()<<std::endl;
+    }
+    start_imageSurface = IMG_Load("2048.png");
+    start_imageTexture = SDL_CreateTextureFromSurface(renderer, start_imageSurface);
+    start_imageRect.x = SCREEN_WIDTH/2 - 146;
+    start_imageRect.y = 74;
+    start_imageRect.w = start_imageSurface->w;
+    start_imageRect.h = start_imageSurface->h;
+
     SDL_SetWindowTitle(window, "2048 GAME");
     screen = SDL_CreateRGBSurface(0, SCREEN_WIDTH, SCREEN_HEIGHT, 32,
                                   0x00FF0000, 0x0000FF00, 0x000000FF, 0xFF000000);
@@ -89,14 +103,12 @@ void Game::choose_size(Board &board)
     sprintf(text, "Choose size of map: \030 to Bigger, \031 to Smaller     Enter to Start");
     DrawString(screen, screen->w / 2 - strlen(text) * 8 / 2, 20, text, charset, false, true);
 
-    DrawRectangle(screen, SCREEN_WIDTH/2 - 100, SCREEN_HEIGHT/2 - 36, 200, 36, brown, lightyellow);
+    DrawRectangle(screen, SCREEN_WIDTH/2 - 100, SCREEN_HEIGHT/2 - 36 +196, 200, 36, brown, lightyellow);
     std::stringstream ss;
     ss<<"Size: "<<board.size;
     std::string tempstr = ss.str();
     strcpy(text, tempstr.c_str());
-    DrawString(screen, SCREEN_WIDTH/2 - strlen(text) * 4, SCREEN_HEIGHT / 2 - 20, text, charset, false, true);
-    if (board.size >= 6) board.size = 6;
-    if (board.size <= 3) board.size = 3;
+    DrawString(screen, SCREEN_WIDTH/2 - strlen(text) * 4, SCREEN_HEIGHT / 2 - 20 +196, text, charset, false, true);
 
     while (SDL_PollEvent(&event)) {
         switch (this->event.type) {
@@ -211,12 +223,20 @@ void Game::show_win(const Board &board)
     }
 }
 
-
 void Game::update_n_display()
 {
     SDL_UpdateTexture(scrtex, NULL, screen->pixels, screen->pitch);
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, scrtex, NULL, NULL);
+    SDL_RenderPresent(renderer);
+}
+
+void Game::display_gamestart()
+{
+    SDL_UpdateTexture(scrtex, NULL, screen->pixels, screen->pitch);
+    SDL_RenderClear(renderer);
+    SDL_RenderCopy(renderer, scrtex, NULL, NULL);
+    SDL_RenderCopy(renderer, start_imageTexture, NULL, &start_imageRect);
     SDL_RenderPresent(renderer);
 }
 

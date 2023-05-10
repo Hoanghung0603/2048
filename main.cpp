@@ -12,7 +12,7 @@ int main(int argc, char **argv){
 	while(!game.is_quit()){
         if(!game.is_getStart()){
 			game.choose_size(board);
-            game.update_n_display();
+			game.display_gamestart();
         }
         if(game.is_getStart() && !board.checkLose() && !board.checkWin()){
             game.playing(board);

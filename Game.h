@@ -23,6 +23,7 @@ class Game
         void show_lose(const Board &board);
         void show_win(const Board &board);
         void update_n_display();
+        void display_gamestart();
         void clean();
     private:
         char text[128];
@@ -32,6 +33,10 @@ class Game
         double worldTime = 0;
         bool quit= false;
         bool getStart = false;
+
+        SDL_Rect start_imageRect;
+        SDL_Surface* start_imageSurface;
+        SDL_Texture* start_imageTexture;
 
         SDL_Event event;
         SDL_Surface *screen = nullptr;

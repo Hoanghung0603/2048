@@ -3,7 +3,6 @@
 
 #define SCREEN_WIDTH	640
 #define SCREEN_HEIGHT	480
-//#define BOARD_SIZE 4
 
 #define BOARD_WIDTH		420
 #define BOARD_X 50
